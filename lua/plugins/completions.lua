@@ -3,6 +3,13 @@ return {
 		"hrsh7th/cmp-nvim-lsp"
 	},
 	{
+		"L3MON4D3/LuaSnip",
+		dependencies = {
+			"saadparwaiz1/cmp_luasnip",
+			"rafamadriz/friendly-snippets",
+		}
+	},
+	{
 		"Exafunction/codeium.nvim",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
@@ -12,13 +19,6 @@ return {
 			require("codeium").setup({
 			})
 		end
-	},
-	{
-		"L3MON4D3/LuaSnip",
-		dependencies = {
-			"saadparwaiz1/cmp_luasnip",
-			"rafamadriz/friendly-snippets",
-		},
 	},
 	{
 		"hrsh7th/nvim-cmp",
@@ -44,8 +44,8 @@ return {
 					["<CR>"] = cmp.mapping.confirm({ select = true }),
 				}),
 				sources = cmp.config.sources({
-					{ name = "luasnip" },
 					{ name = "nvim_lsp" },
+					{ name = "luasnip" },
 					{ name = "codeium" },
 				}, {
 					{ name = "buffer" },
